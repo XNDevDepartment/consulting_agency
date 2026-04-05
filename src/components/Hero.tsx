@@ -75,7 +75,7 @@ export default function Hero() {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 text-center pt-28 pb-24">
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -142,7 +142,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.85 }}
-          className="flex flex-wrap justify-center gap-8 sm:gap-12 mt-14 sm:mt-20"
+          className="grid grid-cols-2 sm:grid-cols-4 gap-8 mt-16 max-w-2xl mx-auto"
         >
           {[
             { value: "50+", label: "Projects Delivered" },
@@ -156,23 +156,23 @@ export default function Hero() {
             </div>
           ))}
         </motion.div>
-      </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30 text-xs tracking-widest uppercase"
-      >
-        <span>Scroll</span>
+        {/* Scroll indicator — in flow, not absolute */}
         <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2 }}
+          className="flex flex-col items-center gap-2 text-white/30 text-xs tracking-widest uppercase mt-16"
         >
-          <ArrowDown size={16} />
+          <span>Scroll</span>
+          <motion.div
+            animate={{ y: [0, 6, 0] }}
+            transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+          >
+            <ArrowDown size={16} />
+          </motion.div>
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 }
