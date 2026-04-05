@@ -1,46 +1,51 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2, Zap, ArrowRight } from "lucide-react";
+import { CheckCircle2, Zap, ArrowRight, Clock } from "lucide-react";
 
 const plans = [
   {
-    name: "Process Automation",
+    name: "Standard",
     price: "$3,000",
     period: "per engagement",
-    tagline: "Automate the workflows slowing your team down.",
+    tagline: "Full service delivery with structured review cycles.",
+    responseTime: "48h",
+    responseLabel: "Review & change response",
     gradient: "from-blue-deep to-navy",
     badge: null,
     features: [
-      "Full process audit & mapping",
-      "Automation opportunity analysis",
-      "Up to 3 automated workflows",
-      "Integration with your existing tools",
+      "Problem discovery & scoping",
+      "Solution architecture",
+      "Full development & integration",
       "Testing & deployment",
       "Documentation & team handover",
+      "Change requests reviewed every 48 hours",
       "2 weeks of post-launch support",
     ],
-    cta: "Start Automating",
+    cta: "Get Started",
     dark: false,
   },
   {
-    name: "AI Integration",
+    name: "Priority",
     price: "$5,000",
     period: "per engagement",
-    tagline: "Embed AI into your product or operations end-to-end.",
+    tagline: "Faster iteration, tighter feedback loops, quicker delivery.",
+    responseTime: "24h",
+    responseLabel: "Review & change response",
     gradient: "from-blue-vivid to-blue-deep",
-    badge: "Most Popular",
+    badge: "Recommended",
     features: [
       "Problem discovery & scoping",
-      "Full solution architecture",
-      "AI model selection & configuration",
-      "Custom development & integration",
-      "Testing, deployment & monitoring setup",
+      "Solution architecture",
+      "Full development & integration",
+      "Testing & deployment",
       "Documentation & team handover",
+      "Change requests reviewed every 24 hours",
       "4 weeks of post-launch support",
+      "Weekly progress calls",
       "Performance review at 30 days",
     ],
-    cta: "Start Building",
+    cta: "Get Started",
     dark: true,
   },
 ];
@@ -55,7 +60,6 @@ export default function Pricing() {
       <div className="absolute inset-0 grid-bg opacity-20" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-vivid/40 to-transparent" />
 
-      {/* Background decoration */}
       <div className="absolute top-20 right-0 w-96 h-96 opacity-5 pointer-events-none">
         <svg viewBox="0 0 200 200" fill="none">
           <circle cx="200" cy="0" r="120" stroke="#2D5BE3" strokeWidth="1" />
@@ -80,11 +84,11 @@ export default function Pricing() {
             Simple, Transparent Pricing
           </h2>
           <p className="text-white/50 text-lg max-w-xl mx-auto">
-            Two focused services. Fixed-price engagements. No retainers, no hidden fees — just a clear scope and a defined outcome.
+            Both plans include the full service. The difference is how fast we respond to your reviews and change requests.
           </p>
         </motion.div>
 
-        {/* Plans grid */}
+        {/* Plans */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {plans.map((plan, i) => (
             <motion.div
@@ -99,7 +103,7 @@ export default function Pricing() {
                   : "border border-white/10 bg-white/3"
               }`}
             >
-              {/* Popular badge */}
+              {/* Badge */}
               {plan.badge && (
                 <div className="absolute top-0 right-0">
                   <div className="bg-blue-vivid text-white text-xs font-bold px-4 py-1.5 tracking-widest uppercase">
@@ -108,23 +112,43 @@ export default function Pricing() {
                 </div>
               )}
 
-              {/* Gradient top bar */}
+              {/* Top accent bar */}
               <div className={`h-1 w-full bg-gradient-to-r ${plan.gradient}`} />
 
               <div className="p-8 flex flex-col flex-1">
-                {/* Plan name & tagline */}
+                {/* Name & tagline */}
                 <div className="mb-8">
                   <h3 className="text-white font-black text-xl mb-2">{plan.name}</h3>
                   <p className="text-white/50 text-sm leading-relaxed">{plan.tagline}</p>
                 </div>
 
                 {/* Price */}
-                <div className="mb-8 pb-8 border-b border-white/10">
+                <div className="mb-6">
                   <div className="flex items-end gap-2">
                     <span className="text-5xl font-black text-white">{plan.price}</span>
                   </div>
                   <span className="text-white/40 text-sm mt-1 block">{plan.period}</span>
                 </div>
+
+                {/* Response time callout */}
+                <div className={`flex items-center gap-3 px-4 py-3 rounded-sm mb-8 border ${
+                  plan.dark
+                    ? "bg-blue-vivid/20 border-blue-vivid/40"
+                    : "bg-white/5 border-white/10"
+                }`}>
+                  <Clock size={18} className={plan.dark ? "text-blue-light shrink-0" : "text-white/50 shrink-0"} />
+                  <div>
+                    <p className={`text-xs font-semibold uppercase tracking-widest mb-0.5 ${plan.dark ? "text-blue-light" : "text-white/40"}`}>
+                      {plan.responseLabel}
+                    </p>
+                    <p className={`text-lg font-black ${plan.dark ? "text-white" : "text-white/80"}`}>
+                      Within {plan.responseTime}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Divider */}
+                <div className="border-t border-white/10 mb-8" />
 
                 {/* Features */}
                 <ul className="space-y-3 mb-10 flex-1">
@@ -134,7 +158,13 @@ export default function Pricing() {
                         size={16}
                         className={`mt-0.5 shrink-0 ${plan.dark ? "text-blue-light" : "text-blue-vivid/70"}`}
                       />
-                      <span className="text-white/70 text-sm leading-relaxed">{feature}</span>
+                      <span className={`text-sm leading-relaxed ${
+                        feature.includes("24 hours") || feature.includes("48 hours")
+                          ? "text-white font-semibold"
+                          : "text-white/70"
+                      }`}>
+                        {feature}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -166,12 +196,12 @@ export default function Pricing() {
           viewport={{ once: true }}
           className="text-center text-white/30 text-sm mt-10"
         >
-          Need something larger or more complex?{" "}
+          Need a custom scope or larger engagement?{" "}
           <button
             onClick={scrollToContact}
             className="text-blue-light hover:text-white underline underline-offset-2 transition-colors duration-200"
           >
-            Let&apos;s talk about a custom scope.
+            Let&apos;s talk.
           </button>
         </motion.p>
       </div>
