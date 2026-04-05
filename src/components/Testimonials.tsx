@@ -84,7 +84,7 @@ function StarRating({ count }: { count: number }) {
 
 export default function Testimonials() {
   return (
-    <section className="relative bg-off-white py-28 overflow-hidden">
+    <section className="relative bg-off-white py-32 overflow-hidden">
       {/* Decorative top shape */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-16 bg-gradient-to-b from-blue-vivid/40 to-transparent" />
 
@@ -95,7 +95,7 @@ export default function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true, margin: "-100px" }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-vivid/30 bg-blue-vivid/5 text-blue-deep text-xs font-semibold tracking-widest uppercase mb-6">
             Social Proof
@@ -109,7 +109,7 @@ export default function Testimonials() {
         </motion.div>
 
         {/* Testimonials grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
             <motion.div
               key={i}
@@ -117,7 +117,7 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
               viewport={{ once: true, margin: "-60px" }}
-              className="bg-white rounded-sm border border-light-gray p-7 relative overflow-hidden group hover:border-blue-light/30 hover:shadow-md transition-all duration-300"
+              className="bg-white rounded-sm border border-light-gray p-8 relative overflow-hidden group hover:border-blue-light/30 hover:shadow-md transition-all duration-300"
             >
               {/* Large background quote mark */}
               <Quote
@@ -164,7 +164,7 @@ export default function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="mt-16 pt-12 border-t border-light-gray flex flex-wrap justify-center gap-12 text-center"
+          className="mt-20 pt-12 border-t border-light-gray flex flex-wrap justify-center gap-6 sm:gap-12 text-center"
         >
           {[
             { value: "5.0", label: "Average Rating" },

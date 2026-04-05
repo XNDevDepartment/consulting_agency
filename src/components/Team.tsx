@@ -7,7 +7,7 @@ const team = [
   {
     name: "Alex Rivera",
     role: "CEO & AI Architect",
-    bio: "10+ years designing AI systems for Fortune 500 companies. Former ML lead at a major tech firm.",
+    bio: "10+ years building AI systems at scale. Former ML lead at a major tech firm — obsessed with solving the right problem.",
     gradient: "from-blue-vivid to-blue-deep",
     initials: "AR",
     expertise: ["LLMs", "System Design", "Strategy"],
@@ -15,7 +15,7 @@ const team = [
   {
     name: "Maya Chen",
     role: "Head of Automation",
-    bio: "Process automation specialist with deep expertise in enterprise workflow design and n8n implementations.",
+    bio: "Process automation specialist who turns tangled workflows into clean, reliable automation pipelines.",
     gradient: "from-blue-deep to-navy",
     initials: "MC",
     expertise: ["n8n", "Process Design", "APIs"],
@@ -23,7 +23,7 @@ const team = [
   {
     name: "Jordan Kim",
     role: "Lead Engineer",
-    bio: "Full-stack engineer with a focus on production AI infrastructure, RAG systems, and scalable architectures.",
+    bio: "Full-stack engineer focused on AI infrastructure, search systems, and systems built to scale.",
     gradient: "from-blue-light to-blue-vivid",
     initials: "JK",
     expertise: ["Python", "React", "Infra"],
@@ -31,7 +31,7 @@ const team = [
   {
     name: "Sam Torres",
     role: "Integration Specialist",
-    bio: "Expert in enterprise system integration, ensuring AI solutions fit seamlessly into complex tech ecosystems.",
+    bio: "Expert at connecting AI solutions to existing enterprise systems — so they actually get used.",
     gradient: "from-navy to-blue-vivid",
     initials: "ST",
     expertise: ["ERP", "REST/GraphQL", "DevOps"],
@@ -40,7 +40,7 @@ const team = [
 
 export default function Team() {
   return (
-    <section id="team" className="relative bg-off-white py-28 overflow-hidden">
+    <section id="team" className="relative bg-off-white py-32 overflow-hidden">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-30"
         style={{
@@ -65,12 +65,12 @@ export default function Team() {
             Meet the Team
           </h2>
           <p className="text-black/50 text-lg max-w-xl mx-auto">
-            A compact, senior team — no juniors running your project, no account managers in the way.
+            A small, senior team. No juniors running your project, no layers between you and the people doing the work.
           </p>
         </motion.div>
 
         {/* Team cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {team.map((member, i) => (
             <motion.div
               key={i}
@@ -83,7 +83,6 @@ export default function Team() {
             >
               {/* Avatar header */}
               <div className={`h-32 bg-gradient-to-br ${member.gradient} relative overflow-hidden flex items-center justify-center`}>
-                {/* Decorative lines */}
                 <div className="absolute inset-0 opacity-20">
                   <svg viewBox="0 0 200 100" className="w-full h-full">
                     <line x1="0" y1="100" x2="100" y2="0" stroke="white" strokeWidth="0.5"/>
@@ -97,13 +96,13 @@ export default function Team() {
               </div>
 
               {/* Content */}
-              <div className="p-5">
+              <div className="p-6">
                 <h3 className="font-bold text-black text-lg leading-tight">{member.name}</h3>
                 <p className="text-blue-vivid text-xs font-semibold tracking-wide mt-0.5 mb-3">{member.role}</p>
                 <p className="text-black/55 text-sm leading-relaxed mb-4">{member.bio}</p>
 
                 {/* Expertise tags */}
-                <div className="flex flex-wrap gap-1.5 mb-4">
+                <div className="flex flex-wrap gap-2 mb-4">
                   {member.expertise.map((tag) => (
                     <span
                       key={tag}
@@ -117,13 +116,13 @@ export default function Team() {
                 {/* Social links */}
                 <div className="flex gap-2">
                   <button
-                    className="w-7 h-7 rounded-sm bg-light-gray hover:bg-blue-vivid/10 hover:text-blue-vivid text-black/40 flex items-center justify-center transition-colors duration-200"
+                    className="w-8 h-8 rounded-sm bg-light-gray hover:bg-blue-vivid/10 hover:text-blue-vivid text-black/40 flex items-center justify-center transition-colors duration-200"
                     aria-label={`${member.name} LinkedIn`}
                   >
                     <Linkedin size={13} />
                   </button>
                   <button
-                    className="w-7 h-7 rounded-sm bg-light-gray hover:bg-blue-vivid/10 hover:text-blue-vivid text-black/40 flex items-center justify-center transition-colors duration-200"
+                    className="w-8 h-8 rounded-sm bg-light-gray hover:bg-blue-vivid/10 hover:text-blue-vivid text-black/40 flex items-center justify-center transition-colors duration-200"
                     aria-label={`${member.name} Twitter`}
                   >
                     <Twitter size={13} />

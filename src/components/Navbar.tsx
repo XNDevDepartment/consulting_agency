@@ -77,7 +77,7 @@ export default function Navbar() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden text-white p-2"
+            className="md:hidden text-white p-3"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -96,12 +96,12 @@ export default function Navbar() {
             transition={{ duration: 0.2 }}
             className="fixed top-16 left-0 right-0 z-40 bg-black/95 backdrop-blur-md border-b border-blue-deep/20 md:hidden"
           >
-            <div className="flex flex-col px-6 py-6 gap-5">
+            <div className="flex flex-col px-6 py-8 gap-6">
               {navLinks.map((link) => (
                 <button
                   key={link.href}
                   onClick={() => handleNavClick(link.href)}
-                  className="text-left text-white/80 hover:text-white text-base font-medium transition-colors"
+                  className="text-left text-white/80 hover:text-white text-lg font-medium transition-colors py-1"
                 >
                   {link.label}
                 </button>

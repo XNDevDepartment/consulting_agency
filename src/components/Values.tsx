@@ -17,12 +17,12 @@ const values = [
   {
     icon: Sparkles,
     name: "Innovation",
-    description: "We stay at the edge of what's possible with AI, applying new capabilities when they genuinely fit.",
+    description: "We apply new AI capabilities when they actually fit — not because they're trending.",
   },
   {
     icon: Link2,
     name: "Integration",
-    description: "Solutions that live within your ecosystem — not isolated tools that create new silos.",
+    description: "Our solutions connect to what you already have. No isolated tools, no new silos.",
   },
   {
     icon: TrendingUp,
@@ -38,7 +38,7 @@ const values = [
 
 export default function Values() {
   return (
-    <section className="relative bg-navy py-28 overflow-hidden">
+    <section className="relative bg-navy py-32 overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-30" />
 
       {/* Background geometric decorations */}
@@ -73,12 +73,12 @@ export default function Values() {
             Our Core Values
           </h2>
           <p className="text-white/50 text-lg max-w-xl mx-auto">
-            The principles that guide every engagement, every architecture decision, and every line of code we write.
+            The principles behind every decision we make — from the first conversation to the final deployment.
           </p>
         </motion.div>
 
         {/* Values grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {values.map((value, i) => {
             const Icon = value.icon;
             return (
@@ -89,7 +89,7 @@ export default function Values() {
                 transition={{ duration: 0.5, delay: i * 0.08 }}
                 viewport={{ once: true, margin: "-60px" }}
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                className="card-glass rounded-sm p-7 cursor-default group transition-all duration-300"
+                className="card-glass rounded-sm p-8 cursor-default group transition-all duration-300"
               >
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-sm bg-blue-vivid/15 border border-blue-vivid/20 flex items-center justify-center shrink-0 group-hover:bg-blue-vivid/30 group-hover:border-blue-vivid/50 transition-all duration-300">

@@ -55,7 +55,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative bg-navy py-28 overflow-hidden">
+    <section id="contact" className="relative bg-navy py-32 overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-25" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-vivid/40 to-transparent" />
 
@@ -81,11 +81,11 @@ export default function Contact() {
             Start Here
           </div>
           <h2 className="text-4xl md:text-5xl font-black text-white leading-tight mb-4">
-            Let&apos;s Talk About{" "}
+            Tell Us{" "}
             <span className="text-gradient-blue">Your Problem</span>
           </h2>
           <p className="text-white/50 text-lg max-w-xl mx-auto">
-            Tell us what you&apos;re trying to solve. We&apos;ll tell you honestly whether we can help — and how.
+            Share what you&apos;re trying to solve. We&apos;ll get back to you honestly — whether we can help or not.
           </p>
         </motion.div>
 
@@ -97,7 +97,7 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true, margin: "-100px" }}
           >
-            <div className="space-y-6 mb-10">
+            <div className="space-y-8 mb-12">
               {infoItems.map((item, i) => {
                 const Icon = item.icon;
                 return (
@@ -117,7 +117,7 @@ export default function Contact() {
             </div>
 
             {/* What happens next */}
-            <div className="card-glass rounded-sm p-6">
+            <div className="card-glass rounded-sm p-8">
               <p className="text-xs font-semibold text-white/40 uppercase tracking-widest mb-5">
                 What happens next
               </p>
@@ -154,8 +154,8 @@ export default function Contact() {
                 </p>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-xs font-semibold text-white/50 uppercase tracking-widest mb-2">
                       Name *
@@ -231,7 +231,7 @@ export default function Contact() {
                       minLength: { value: 20, message: "Please provide more detail (at least 20 chars)" },
                     })}
                     rows={5}
-                    placeholder="Describe the problem you're trying to solve, your current situation, and any constraints..."
+                    placeholder="Describe your situation and what you'd like to change."
                     className="form-input w-full px-4 py-3 rounded-sm text-sm resize-none"
                   />
                   {errors.message && (

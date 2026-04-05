@@ -42,7 +42,7 @@ export default function Footer() {
       <div className="absolute inset-0 grid-bg opacity-10" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 md:gap-12 mb-12">
           {/* Brand column */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
@@ -55,8 +55,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-white/45 text-sm leading-relaxed max-w-xs mb-6">
-              Intelligence that moves business forward. We build AI-powered software and
-              enterprise automation solutions that deliver measurable results.
+              We build AI software and automation that moves your business forward.
             </p>
             <div className="flex gap-2">
               {socialLinks.map((social) => {

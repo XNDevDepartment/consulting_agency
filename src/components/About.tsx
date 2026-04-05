@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 
 const differentiators = [
-  "We don't sell tools — we architect outcomes tailored to your business reality.",
-  "Every engagement starts with deep problem understanding before any line of code.",
-  "We stay until the solution runs in production and your team owns it fully.",
+  "We solve problems, not sell tools.",
+  "We listen first, then we build.",
+  "We stay until it works — and your team owns it.",
 ];
 
 export default function About() {
   return (
-    <section id="about" className="relative bg-off-white py-28 overflow-hidden">
+    <section id="about" className="relative bg-off-white py-32 overflow-hidden">
       {/* Decorative corner shape */}
       <div className="absolute top-0 right-0 w-64 h-64 opacity-5 pointer-events-none">
         <svg viewBox="0 0 200 200" fill="none" className="w-full h-full">
@@ -22,7 +22,7 @@ export default function About() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           {/* Left — text */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -35,23 +35,20 @@ export default function About() {
             </div>
 
             <h2 className="text-4xl md:text-5xl font-black text-black leading-tight mb-6">
-              A team of engineers who{" "}
+              Engineers who{" "}
               <span className="text-gradient-blue">think like strategists.</span>
             </h2>
 
             <p className="text-black/60 text-lg leading-relaxed mb-8">
-              NEXUS AI is a specialist consulting agency at the intersection of
-              enterprise strategy and modern AI engineering. We exist to bridge
-              the gap between what technology can do today and what your business
-              actually needs — no fluff, no over-engineering.
+              NEXUS AI is an AI consulting agency focused on two things: building
+              AI into your software, and automating the workflows that slow your
+              team down. We don&apos;t do everything — we do these two things exceptionally well.
             </p>
 
             <p className="text-black/60 leading-relaxed mb-10">
-              We work exclusively on two high-impact service lines: embedding AI
-              capabilities into your software and processes, and automating the
-              workflows that consume your team&apos;s time without adding strategic
-              value. Both services follow a rigorous methodology that begins with
-              listening.
+              Every engagement starts with understanding your actual problem —
+              not just the one you described. We listen, we design, we build,
+              and we stay until it works.
             </p>
 
             <div className="space-y-4">

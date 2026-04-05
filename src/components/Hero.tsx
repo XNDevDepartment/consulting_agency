@@ -92,7 +92,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35 }}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[0.92] tracking-tight text-white mb-6"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight text-white mb-6"
         >
           We Build the{" "}
           <span className="text-gradient">Intelligence</span>
@@ -107,9 +107,8 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.5 }}
           className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          From understanding your problem to deploying production-grade AI systems
-          and automated workflows — we architect solutions that transform how your
-          enterprise operates.
+          We go from understanding your problem all the way to deploying AI systems
+          and automated workflows that change how your business operates.
         </motion.p>
 
         {/* CTAs */}
@@ -143,7 +142,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.85 }}
-          className="flex flex-wrap justify-center gap-12 mt-20"
+          className="flex flex-wrap justify-center gap-8 sm:gap-12 mt-14 sm:mt-20"
         >
           {[
             { value: "50+", label: "Projects Delivered" },
