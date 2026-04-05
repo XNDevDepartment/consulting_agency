@@ -6,6 +6,7 @@ import Values from "@/components/Values";
 import Team from "@/components/Team";
 import Projects from "@/components/Projects";
 import Testimonials from "@/components/Testimonials";
+import Pricing from "@/components/Pricing";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -20,6 +21,7 @@ export default function Home() {
       <Team />
       <Projects />
       <Testimonials />
+      <Pricing />
       <Contact />
       <Footer />
     </main>
